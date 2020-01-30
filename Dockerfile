@@ -44,14 +44,6 @@ ENV MAVEN_HOME /opt/maven
 # Clang
 RUN apt-get install -y clang
 
-# Anaconda installing
-RUN wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh \
-    && bash Anaconda3-5.0.1-Linux-x86_64.sh -b \
-    && rm Anaconda3-5.0.1-Linux-x86_64.sh
-
-# Set path to conda
-ENV PATH /root/anaconda3/bin:$PATH
-
 # CPAN
 RUN apt-get install -qy perl cpanminus \
     && rm -rf "/var/lib/apt/lists/*", "/tmp/*", "/var/tmp/*" \
